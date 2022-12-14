@@ -3,6 +3,11 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    #affiche page accueil avec deux options
+    return render_template('index.html')
+
 @app.route('/') #route pour activité random
 def random_activity():
   activity = requests.get('https://www.boredapi.com/api/activity/').json()
@@ -19,6 +24,3 @@ def activity_by_participants():
 
 if __name__ == '__main__':
   app.run()
-
-
-  
