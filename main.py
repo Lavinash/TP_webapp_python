@@ -23,4 +23,4 @@ def activity_by_participants():
     return render_template('activity_form.html')
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True,host='0.0.0.0')

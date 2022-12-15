@@ -1,6 +1,7 @@
-FROM python:3.8.5
-COPY . /app
-#RUN pip install -r /app/requirements.txt
+FROM python:3.11.1-buster
 WORKDIR /app
-EXPOSE 8000
-CMD ["python", "main.py"]
+COPY . /app
+RUN pip install -r /app/requirements.txt
+#RUN pip install requests
+#EXPOSE 5000
+CMD ["python3", "main.py"]
