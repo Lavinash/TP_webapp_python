@@ -1,6 +1,6 @@
 import requests
 
-url = "hhtp://localhost:5000"
+url = "http://localhost:5000"
 
 def test_index(): #test pour l'affichage de la page d'accueil
     response = requests.get(url)
