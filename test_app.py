@@ -17,7 +17,7 @@ def test_index_page(client): #test pour l'affichage de la page d'accueil
 def test_random_activity(client): #test pour l'affichage de la page d'activité aléatoire
     response = client.get('/activity')
     assert response.status_code == 200
-    assert b'Activité aléatoire' in response.data
+    assert b'Aleatoire' in response.data
 
 #def test_activity_by_participants(client):
   #  response = client.post('/activity_form', data={'participants': 2})
