@@ -30,8 +30,8 @@ jobs:
           
     - name: Build the Docker image
       run: |
-          docker build . --file Dockerfile --tag mywebapp:$(date +%s)
-          docker tag mywebapp:$(date +%s) ${{ secrets.DOCKER_USERNAME }}/mywebapp:latest
+          docker build . --file Dockerfile --tag mywebapp:latest
+          docker tag mywebapp:latest ${{ secrets.DOCKER_USERNAME }}/mywebapp:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/mywebapp:latest
       
     
