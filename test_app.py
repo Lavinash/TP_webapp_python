@@ -19,7 +19,7 @@ def test_random_activity(client): #test pour l'affichage de la page d'activité 
     assert response.status_code == 200
     assert b'Aleatoire' in response.data
 
-#def test_activity_by_participants(client):
-  #  response = client.post('/activity_form', data={'participants': 2})
-  #  assert response.status_code == 200
- #   assert b'activity.html' in response.data
+def test_activity_by_participants(client): #test pour l'affichage de la page activité selon le nb de personnes
+    response = client.post('/activity_form', data={'participants': 2}) #on test avec une input de 2 participants
+    assert response.status_code == 200
+    assert b'activity.html' in response.data
