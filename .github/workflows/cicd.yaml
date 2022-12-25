@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           
       - name: Build the Docker image
-        if: ${{ job.dependances_and_test.steps.Tests.env.testok == 'success' }}
+        if: ${{ job.dependances_and_test.steps.Tests.env.testok == 'true' }}
         run: |
             docker build . --file Dockerfile --tag mywebapp:latest
             docker tag mywebapp:latest ${{ secrets.DOCKER_USERNAME }}/mywebapp:latest
