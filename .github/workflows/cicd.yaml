@@ -8,22 +8,20 @@ on:
 
 jobs:
 
-  dependances:
+  dependances_and_test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Installation dependances
       run: python -m pip install -r requirements.txt
       
-  #tests:
-    #runs-on: ubuntu-latest
-    #steps:
     - name: Tests
       run: pytest test_app.py
       env:
-        testok: ${{ job.status == 'success' }}
+        testok: ${{ job.status }}
+        
     - name: echo testok
-      run: echo ${{ job.tests.steps.Tests.env.testok }}
+      run: echo ${{ job.dependances_and_test.steps.Tests.env.testok }}
 
   build_and_login:  
     runs-on: ubuntu-latest
