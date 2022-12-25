@@ -23,7 +23,7 @@ jobs:
       env:
         testok: ${{ job.status == 'success' }}
     - name: echo testok
-      run: echo $testok
+      run: echo ${{ job.tests.steps.Tests.env.testok }}
 
   build_and_login:  
     runs-on: ubuntu-latest
