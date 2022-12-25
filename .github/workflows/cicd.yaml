@@ -16,12 +16,12 @@ jobs:
       run: python -m pip install -r requirements.txt
       
     - name: Tests
-      run: pytest test_app.py
+      run: pytest test_app.py && echo $testok
       env:
         testok: ${{ job.status }}
         
-    - name: echo testok
-      run: echo ${{ job.dependances_and_test.steps.Tests.env.testok }}
+   # - name: echo testok
+    #  run: echo $testok
 
   build_and_login:  
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           
       - name: Build the Docker image
-        if: ${{ job.tests.steps.Tests.env.testok == 'success' }}
+        if: ${{ job.dependances_and_tests.steps.Tests.env.testok == 'true' }}
         run: |
             docker build . --file Dockerfile --tag mywebapp:latest
             docker tag mywebapp:latest ${{ secrets.DOCKER_USERNAME }}/mywebapp:latest
