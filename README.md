@@ -33,6 +33,20 @@ L'application devrait maintenant être disponible à l'adresse http://localhost:
 
 ## Fonctionnalités
 
+Notre application se sert d'une API, plus précisement la Bored API.
+
+Elle permet de trouver soit : 
+  - une activité aléatoire à réaliser seul;
+  - une activité de groupe en fonction du nombre de participants.
+Sur la page web on peut voir deux boutons permettant de faire le choix entre ces deux options.
+
+## Fonctionnement
+
+Pour build notre application il faut suivre les étapes de la partie : ## Installation.
+Les phases de test de l'application sont directement incluses dans le code et sont faites avant de donner un résultat.
+Si l'on souhaite lancer l'application localement il faut suivre les étapes precedentes jusqu'à l'execution, l'application arrive donc à l'adresse http://localhost:5000/
+
+
 
 
 
