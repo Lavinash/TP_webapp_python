@@ -46,6 +46,14 @@ Pour build notre application il faut suivre les étapes de la partie : ## Instal
 Les phases de test de l'application sont directement incluses dans le code et sont faites avant de donner un résultat.
 Si l'on souhaite lancer l'application localement il faut suivre les étapes precedentes jusqu'à l'execution, l'application arrive donc à l'adresse http://localhost:5000/
 
+## Intégration continue
+
+Notre tp traite les aspects CICD de notre application en se basant sur le process suivant : 
+  - build image docker intégrant notre application
+  - push cette image automatiquement dès mises jours
+
+Vous pouvez retrouver un Dokerfile ready to use ainsi qu'un workflow GithubActions pour la partie CICD
+
 
 
 
